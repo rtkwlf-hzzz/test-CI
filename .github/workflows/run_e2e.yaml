@@ -5,6 +5,16 @@ on:
         description: 'ZD token'     
         required: true
         type: string
+      WAIT_PERIOD_SECONDS:
+        description: 'WAIT PERIODS'     
+        required: true
+        type: string
+        default: '10'
+      MAX_RETRY_TIMES:
+        description: 'MAX RETRY TIMES'     
+        required: true
+        type: string
+        default: '5'
 
 jobs:
   build:
