@@ -19,14 +19,8 @@ jobs:
       with:
         python-version: "3.9"
 
-      # we should not install any other deps since Workato doesn't support it
-      # copy&paste the source code if you really need it
-  log-the-inputs:
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          python test.py
-        env:
-          ZD_TOKEN: ${{ inputs.ZD_TOKEN }}
-          TAGS: ${{ inputs.tags }}
-          ENVIRONMENT: ${{ inputs.environment }}
+    - name: run E2E
+      run: |
+        python test.py
+      env:
+        ZD_TOKEN: ${{ inputs.ZD_TOKEN }}
